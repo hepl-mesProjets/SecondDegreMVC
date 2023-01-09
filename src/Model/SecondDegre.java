@@ -9,14 +9,22 @@ public class SecondDegre
     private double[] racines;
 
     private static final double EPSILON = 0.0000001;
+    private static SecondDegre instance = null;
 
-    public SecondDegre()
+    private SecondDegre()
     {
         this.a = 0;
         this.b = 0;
         this.c = 0;
         this.nbRacines = 0;
         this.racines = null;
+    }
+
+    public static SecondDegre getInstance()
+    {
+        if (instance == null)
+            instance = new SecondDegre();
+        return instance;
     }
 
     public void resoudre()
